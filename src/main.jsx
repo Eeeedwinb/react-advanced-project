@@ -3,9 +3,10 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { EventPage } from "./pages/EventPage";
 import { EventsPage } from "./pages/EventsPage";
+import { EventForm } from "./pages/EventForm";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Root } from "./components/Root";
-import { eventPageLoader } from "./components/User";
+import { eventPageLoader } from "./components/EventPageLoader";
 
 const router = createBrowserRouter([
   {
@@ -22,6 +23,11 @@ const router = createBrowserRouter([
         element: <EventPage />,
         loader: eventPageLoader,
         // action: addComment,
+      },
+      {
+        path: "/addevent",
+        element: <EventForm />,
+        // loader: postListLoader,
       },
     ],
   },
