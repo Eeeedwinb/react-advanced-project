@@ -27,7 +27,7 @@ export const Navigation = () => {
           <Text>Home</Text>
         </Flex>
       </Link>
-      <Link to="/">Eventpage</Link>
+      <Link to="/">Eventspage</Link>
     </Flex>
   );
 };
