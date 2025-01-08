@@ -72,7 +72,7 @@ export const EventForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // New ID Code
+    // Code for +1 ID
     const highestId =
       events.length > 0 ? Math.max(...events.map((event) => event.id)) : 0;
     const newId = highestId + 1;

@@ -1,4 +1,4 @@
-import { Flex, Image } from "@chakra-ui/react";
+import { Flex, Image, Text } from "@chakra-ui/react";
 import React from "react";
 import { Link } from "react-router-dom";
 
@@ -24,7 +24,7 @@ export const Navigation = () => {
             h="1em"
           />
 
-          <span>Home</span>
+          <Text>Home</Text>
         </Flex>
       </Link>
       <Link to="/">Eventpage</Link>

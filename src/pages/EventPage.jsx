@@ -23,7 +23,6 @@ export const EventPage = () => {
   const [isEditOpen, setIsEditOpen] = useState(false);
   const [currentEvent, setCurrentEvent] = useState(event);
 
-  // Fetch categories and usesrs
   useEffect(() => {
     const fetchDetails = async () => {
       try {
@@ -56,9 +55,9 @@ export const EventPage = () => {
     const user = users.find((user) => user.id === createdBy);
     return user ? { name: user.name, image: user.image } : null;
   };
-
   const user = getUser(event.createdBy);
 
+  // handle for eventUpdate
   const handleEventUpdate = (updatedEvent) => {
     setCurrentEvent(updatedEvent);
   };
@@ -67,7 +66,7 @@ export const EventPage = () => {
     <>
       <Box>
         <Center mt={{ base: 2, md: 5 }} mb={{ base: 0, md: 5 }}>
-          <Heading size={{ base: "2xl", md: "3xl", lg: "4xl" }}>
+          <Heading size={{ base: "2xl", md: "2xl", lg: "3xl", xl: "4xl" }}>
             {currentEvent.title}
           </Heading>
         </Center>
@@ -102,7 +101,7 @@ export const EventPage = () => {
           <Flex
             fontWeight="medium"
             mx={8}
-            mt={{ base: 5, md: 10 }}
+            mt={{ base: 5, md: 8 }}
             flexDirection="column"
             alignItems={{ base: "flex-start", md: "center" }}
             flex={1}
@@ -110,7 +109,9 @@ export const EventPage = () => {
             <Box h={{ base: 0, md: "25%" }}></Box>
             <Box>
               <Stack spacing="0.25em">
-                <Text as="i">{currentEvent.description}</Text>
+                <Text as="i" fontSize={{ base: "xl", lg: "2xl" }}>
+                  {currentEvent.description}
+                </Text>
                 <br />
                 <Text as="i" fontWeight="normal">
                   *Introduction to the activity*

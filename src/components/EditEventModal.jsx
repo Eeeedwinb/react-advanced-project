@@ -38,7 +38,7 @@ export const EditEventModal = ({ isOpen, onClose, event, onEventUpdate }) => {
       }
 
       const updatedEvent = await response.json();
-      onEventUpdate(updatedEvent); // Inform parent of the update
+      onEventUpdate(updatedEvent);
       toast({
         title: "Event updated.",
         description: `Your event "${updatedEvent.title}" has been updated successfully.
@@ -48,7 +48,7 @@ export const EditEventModal = ({ isOpen, onClose, event, onEventUpdate }) => {
         isClosable: true,
       });
 
-      onClose(); // Close the modal
+      onClose();
     } catch (error) {
       console.error("Error updating event:", error);
       toast({

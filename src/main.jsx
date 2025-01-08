@@ -23,7 +23,7 @@ const customTheme = extendTheme({
   components: {
     Text: {
       baseStyle: {
-        fontSize: { base: "md", lg: "lg" }, // Responsive font size
+        fontSize: { base: "md", lg: "lg" },
       },
     },
   },

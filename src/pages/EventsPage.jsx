@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Box, Button, Center, Heading } from "@chakra-ui/react";
-import { EventSearch } from "../ui/EventList";
+import { EventSearch } from "../components/EventSearch";
 import { Link } from "react-router-dom";
 
 export const EventsPage = () => {
@@ -31,7 +31,7 @@ export const EventsPage = () => {
     fetchEvents();
   }, []);
 
-  if (loading) return <Box>Loading...</Box>;
+  if (loading) return <Center>Loading...</Center>;
 
   return (
     <Box mb={8}>

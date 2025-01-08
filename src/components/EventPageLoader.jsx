@@ -1,7 +1,7 @@
 import { json } from "react-router-dom";
 
 export const eventPageLoader = async ({ params }) => {
-  const { id } = params; // Extract the event ID from the URL parameters
+  const { id } = params;
 
   try {
     const response = await fetch(`http://localhost:3000/events/${id}`);
