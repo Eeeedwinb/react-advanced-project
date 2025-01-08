@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { Box, Button, Heading } from "@chakra-ui/react";
-import { EventSearch } from "../ui/EventSearch";
+import { Box, Button, Center, Heading } from "@chakra-ui/react";
+import { EventSearch } from "../ui/EventList";
 import { Link } from "react-router-dom";
 
 export const EventsPage = () => {
@@ -34,11 +34,17 @@ export const EventsPage = () => {
   if (loading) return <Box>Loading...</Box>;
 
   return (
-    <Box>
-      <Heading mb={5}>Events</Heading>
-      <Button as={Link} to="/addevent">
-        Add Event
-      </Button>
+    <Box mb={8}>
+      <Center mt="2em">
+        <Heading size="3xl" mb={5}>
+          Eventspage
+        </Heading>
+      </Center>
+      <Center>
+        <Button as={Link} bgColor="white" to="/addevent" mt={3}>
+          Add Event
+        </Button>
+      </Center>
       <EventSearch events={events} categories={categories} />
     </Box>
   );

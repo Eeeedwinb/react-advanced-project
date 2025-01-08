@@ -1,17 +1,33 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import { Flex, Image } from "@chakra-ui/react";
+import React from "react";
+import { Link } from "react-router-dom";
 
 export const Navigation = () => {
   return (
-    <nav>
-      <ul>
-        <li>
-          <Link to="/">Events</Link>
-        </li>
-        <li>
-          <Link to="/event/1">Event</Link>
-        </li>
-      </ul>
-    </nav>
+    <Flex
+      bgColor="white"
+      as="nav"
+      justifyContent={{ base: "space-around", lg: "flex-start" }}
+      gap={{ base: "0", lg: "15em" }}
+      alignItems="center"
+      p={4}
+      mt={5}
+      mx={8}
+      borderRadius={"full"}
+    >
+      <Link to="/">
+        <Flex alignItems="center" gap={1}>
+          <Image
+            src="/home.png"
+            alt="Home Image"
+            ml={{ base: "0", lg: "5em" }}
+            h="1em"
+          />
+
+          <span>Home</span>
+        </Flex>
+      </Link>
+      <Link to="/">Eventpage</Link>
+    </Flex>
   );
 };

@@ -9,7 +9,7 @@ export const eventPageLoader = async ({ params }) => {
       throw new Error("Event not found");
     }
     const data = await response.json();
-    return data; // Return the event data to be used by the component
+    return data;
   } catch (error) {
     console.error("Error loading event:", error);
     throw json({ message: "Event not found" }, { status: 404 });
