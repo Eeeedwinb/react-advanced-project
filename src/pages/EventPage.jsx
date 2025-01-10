@@ -14,6 +14,7 @@ import {
 } from "@chakra-ui/react";
 import { EditEventModal } from "../components/EditEventModal";
 import { DeleteEventButton } from "../components/DeleteEventButton";
+import { formatDateTime } from "../ui/formatDateTime";
 
 export const EventPage = () => {
   const navigate = useNavigate();
@@ -117,8 +118,8 @@ export const EventPage = () => {
                   *Introduction to the activity*
                 </Text>
                 <br />
-                <Text>Start: {currentEvent.startTime}</Text>
-                <Text>End: {currentEvent.endTime}</Text>
+                <Text>Start: {formatDateTime(currentEvent.startTime)}</Text>
+                <Text>End: {formatDateTime(currentEvent.endTime)}</Text>
               </Stack>
               <Box mt={{ base: 5, md: 10 }} mb={{ base: 3, md: 0 }}>
                 <Text fontWeight="medium">Created by:</Text>
@@ -126,7 +127,7 @@ export const EventPage = () => {
             </Box>
             {user && (
               <Flex
-                mb={10}
+                mb={5}
                 alignItems="center"
                 justifyContent={{ base: "flex-start", md: "Center" }}
               >
@@ -145,9 +146,10 @@ export const EventPage = () => {
         </Flex>
       </Box>
       <Flex
-        my={{ base: 0, md: 10 }}
-        justifyContent={{ base: "space-around", md: "center" }}
-        gap={{ base: 0, md: "15em" }}
+        my={{ base: 5, md: 10 }}
+        flexDirection="column"
+        alignItems="center"
+        gap={{ base: 5, md: 8 }}
       >
         <Button bgColor="white" onClick={() => setIsEditOpen(true)}>
           Edit Event

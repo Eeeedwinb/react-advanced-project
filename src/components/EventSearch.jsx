@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Box, Input, Select, Text, Center, Grid, Flex } from "@chakra-ui/react";
+import { Box, Input, Select, Center, Grid, Flex } from "@chakra-ui/react";
 import { EventCard } from "./EventCard";
 
 export const EventSearch = ({ events, categories }) => {
@@ -67,7 +67,9 @@ export const EventSearch = ({ events, categories }) => {
           ))}
         </Grid>
       </Center>
-      {filteredEvents.length === 0 && <Text>No events found.</Text>}
+      {filteredEvents.length === 0 && (
+        <Center fontSize={{ base: "xl", lg: "2xl" }}>No events found.</Center>
+      )}
     </Box>
   );
 };

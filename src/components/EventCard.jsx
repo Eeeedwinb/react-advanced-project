@@ -10,6 +10,7 @@ import {
   Text,
   Stack,
 } from "@chakra-ui/react";
+import { formatDateTime } from "../ui/formatDateTime";
 
 export const EventCard = ({ event, categories }) => {
   const getCategoryNamesByIds = (categoryIds) =>
@@ -65,13 +66,13 @@ export const EventCard = ({ event, categories }) => {
               <Text>
                 Start:{" "}
                 <Text as="span" fontWeight="normal">
-                  {event.startTime}
+                  {formatDateTime(event.startTime)}
                 </Text>
               </Text>
               <Text>
                 End:{" "}
                 <Text as="span" fontWeight="normal">
-                  {event.endTime}
+                  {formatDateTime(event.endTime)}
                 </Text>
               </Text>
             </Stack>

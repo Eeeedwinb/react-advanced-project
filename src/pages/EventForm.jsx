@@ -13,7 +13,7 @@ import {
   Center,
   useToast,
 } from "@chakra-ui/react";
-import { Form } from "react-router-dom";
+import { Form, useNavigate } from "react-router-dom";
 
 export const EventForm = () => {
   const [users, setUsers] = useState([]);
@@ -30,6 +30,7 @@ export const EventForm = () => {
   });
 
   const toast = useToast();
+  const navigate = useNavigate();
 
   // Fetch users and events
   useEffect(() => {
@@ -112,6 +113,7 @@ export const EventForm = () => {
         });
 
         setEvents((prevEvents) => [...prevEvents, newEvent]);
+        navigate(`/event/${newId}`);
       } else {
         console.error("Failed to add event:", response.statusText);
       }
@@ -238,7 +240,6 @@ export const EventForm = () => {
                 required
               />
             </FormControl>
-
             <Button type="submit" colorScheme="blue" width="full">
               Add Event
             </Button>
